@@ -106,7 +106,7 @@ class S3DownloaderMixin:
             return super().from_pretrained(pretrained_model_name_or_path, *args, **kwargs)
 
         pretrained_model_name_or_path = pretrained_model_name_or_path.replace("s3://", "")
-        cache_dir = f"./storage/.cache/datalab/models"
+        cache_dir = f"./storage/cache/datalab/models"
         local_path = os.path.join(cache_dir, pretrained_model_name_or_path)
         os.makedirs(local_path, exist_ok=True)
 
